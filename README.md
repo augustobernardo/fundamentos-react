@@ -8,7 +8,7 @@ O ReactJS é single-page. Após a criação do aplicativo React, os arquivos nec
 
 Importando o ReactDOM para renderizar coisas na tela.
 
-```javascript
+```react
 import ReactDOM from 'react-dom'
 
 ReactDOM.render()
@@ -22,7 +22,7 @@ O método `render()` recebe dois parâmetros, o primeiro é o que se quer exibir
 
 Ex: 
 
-```javascript
+```react
 ReactDOM.render('Olá React!!!')
 ```
 
@@ -30,7 +30,7 @@ ReactDOM.render('Olá React!!!')
 
 Para que seja exibido na tela é preciso que seja pego o id da div que tem no arquivo HTML.
 
-```javascript
+```react
 // Usando apenas JavaScript puro
 const el = document.getElementById('root')
 
