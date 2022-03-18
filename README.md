@@ -22,7 +22,7 @@ O método `render()` recebe dois parâmetros, o primeiro é o que se quer exibir
 
 Ex: 
 
-```react
+```jsx
 ReactDOM.render('Olá React!!!')
 ```
 
@@ -30,7 +30,7 @@ ReactDOM.render('Olá React!!!')
 
 Para que seja exibido na tela é preciso que seja pego o id da div que tem no arquivo HTML.
 
-```react
+```jsx
 // Usando apenas JavaScript puro
 const el = document.getElementById('root')
 
@@ -54,7 +54,7 @@ ReactDOM.render(
 
 A sintaxe JSX é exatamente sobre usar tags HTML no JavaScript. Será feito uma conversão dinâmica para JavaScript tudo aquilo que for adicionado na div. Sempre que for usado o JSX é necessário importar o React
 
-```react
+```jsx
 import ReactDOM from 'react-dom'
 import React from 'react'
 
@@ -71,7 +71,7 @@ No JSX é possível colocar variáveis nas partes HTML usando um par de chaves p
 
 Ex:
 
-```react
+```jsx
 import ReactDOM from 'react-dom'
 import React from 'react'
 
@@ -95,7 +95,7 @@ No código acima será exibido na tela a frase "**Olá Mundo!!!**" em negrito.
 
 Para importar o arquivo CSS será utilizado o `import` relativo
 
-```react
+```jsx
 import './index.css'
 // caso esteja na mesma pasta que o index.js
 ```
@@ -114,7 +114,7 @@ Pode-se criar os componentes na pasta src, porém para ficar mais organizado é 
 
 Criando uma função para exemplificar.
 
-```react
+```jsx
 function Primeiro() {
     return 'Primeiro Componente'
 }
@@ -122,7 +122,7 @@ function Primeiro() {
 
 É necessário exportar esse componente para que o index.js tenha acesso, então é colocado um `export default` antes da function.
 
-```react
+```jsx
 export default function Primeiro() {
     // pode-se usar também uma função anônima
     return 'Primeiro Componente'
@@ -133,7 +133,7 @@ export default function Primeiro() {
 
 Após o componente ser exportado, no index.js terá que ser importado:
 
-```react
+```jsx
 import './index.css'
 // O nome Primeiro pode ser mudado para qualquer um
 // Não é necessário colocar .js no arquivo que está sendo importado ex:
@@ -155,7 +155,7 @@ ReactDOM.render(
 
 A função do primeiro componente pode retornar um trecho jsx  de HTML, não se esquecendo de importar o react.
 
-```react
+```jsx
 import React from "react"
 
 export default function Primeiro() {
@@ -167,7 +167,7 @@ export default function Primeiro() {
 
 Quando se tem múltiplos elementos é mais comum envolve-los em um par de parênteses.
 
-```react
+```jsx
 import React from "react"
 
 export default function Primeiro() {
@@ -207,7 +207,7 @@ Os parâmetros são passados diretamente nos componentes, que são tags HTML.
 
 Código do componente ComParametro.jsx.
 
-```react
+```jsx
 import React from "react"
 // props é um parâmetro (qualquer nome pode ser colocado)
 export default function ComParametro(props){
@@ -227,7 +227,7 @@ export default function ComParametro(props){
 
 Código do index.js
 
-```react
+```jsx
 import './index.css'
 import Primeiro from './components/Primeiro'
 import ComParametro from './components/Comparametro'
@@ -256,7 +256,7 @@ Mudando algumas coisas dos arquivos citados a cima.
 
 **ComParametro.jsx**
 
-```react
+```jsx
 import React from "react"
 
 export default function ComParametro(props){
@@ -282,7 +282,7 @@ export default function ComParametro(props){
 
 **index.js**
 
-```react
+```jsx
 import './index.css'
 import Primeiro from './components/Primeiro'
 import ComParametro from './components/ComParametro'
@@ -317,7 +317,7 @@ O resultado dos códigos acima será uma exibição da frase "Segundo Componente
 
 Um erro muito comum é achar que você consegue alterar os valores que foram passados para um componente. As propriedades passadas como parâmetro não é possível mudar pois são somente para leituras. Só é possível alterar um valor usando um processamento antes, por exemplo:
 
-```react
+```jsx
 const notaInt = Math.ceil(props.nota)
 ```
 
@@ -333,7 +333,7 @@ A propriedade `nota` não será alterada, mas a variável `notaInt` terá um um 
 
 Componentes ou componentes jsx adjacentes. Como por exemplo no código abaixo, caso a tag `<div>` que estava envolvendo os componentes for removida será exibido este erro.
 
-```react
+```jsx
 ReactDOM.render(
         <Primeiro></Primeiro>
         <ComParametro 
@@ -347,7 +347,7 @@ ReactDOM.render(
 
 Para resolver esse erro é necessário criar um arquivo jsx, que seus componentes sejam envolvidos por `React.Fragment` ou usando `<> </>`
 
-```react
+```jsx
 import react from 'react'
 
 export default function Fragmento(props){
@@ -376,7 +376,7 @@ A forma mais enxuta de criar um componente funcional é usando uma arrow functio
 
 No **index.js** vai ficar assim
 
-```
+```jsx
 import App from './App'
 
 ReactDOM.render(
@@ -389,7 +389,7 @@ ReactDOM.render(
 
 E no arquivo **App.jsx** ficará assim
 
-```
+```jsx
 import React from "react";
 
 import Primeiro from './components/Primeiro'
@@ -421,7 +421,7 @@ export default function App(props) {
 
 Só podem ser retornadas se tiverem `export default` antes, por exemplo
 
-```react
+```jsx
 export default function(props) {
 	return (
 		<>
@@ -459,7 +459,7 @@ export default (props) => {
 
 A forma mais reduzida que se pode chegar é aplicando esses detalhes, ficando como o código abaixo
 
-```react
+```jsx
 export default _ => 
     <div id='app'>
         <h1>Fundamentos React</h1>
@@ -499,7 +499,7 @@ Dentro do Card você consegue acessar os elementos que estão dentro de outro co
 
 No **App.jsx**
 
-```react
+```jsx
 
 export default (_) => (
     <div id="app">
@@ -522,7 +522,7 @@ export default (_) => (
 
 No **Card.jsx**
 
-```react
+```jsx
 import "./Card.css";
 import React from "react";
 
@@ -554,7 +554,7 @@ Como as cores estão sendo passadas pelos componentes são interpretadas como **
 
 **App.jsx**
 
-```react
+```jsx
 <Card titulo="#04 - Desafio Aleatório" color='#080'></Card>
 ```
 
@@ -562,7 +562,7 @@ Como as cores estão sendo passadas pelos componentes são interpretadas como **
 
 **Card.jsx**
 
-```react
+```jsx
 export default (props) => {
     // const = {} == objeto
     const cardStyle = {
@@ -584,7 +584,7 @@ export default (props) => {
 
 Pode-se passar diretamente no componente porém será necessário o uso de mais um par de chaves, `style={{}}` o segundo par de chaves será para a criação do objeto, podendo quebrar a linha para deixar mais organizado.
 
-```react
+```jsx
 style={{
 	backgroundColor: props.color || '#000',
 	borderColor: props.color ||'#f00'
