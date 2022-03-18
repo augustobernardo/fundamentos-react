@@ -8,7 +8,7 @@ O ReactJS é single-page. Após a criação do aplicativo React, os arquivos nec
 
 Importando o ReactDOM para renderizar coisas na tela.
 
-```react
+```jsx
 import ReactDOM from 'react-dom'
 
 ReactDOM.render()
