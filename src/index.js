@@ -1,17 +1,21 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
+import './index.css'
+import ReactDOM  from "react-dom";
 import App from './App';
-import reportWebVitals from './reportWebVitals';
 
+// Pegando o elemento do HTML para colocar no JS
+//const el = document.getElementById('root')
+
+const tag = <strong>Olá React!!!</strong>
+
+/* colocando o par de chaves em uma propriedade transforma ela em número */
+
+
+// Esse método recebe dois parâmetros, o primeiro é o que se quer exibir na tela
+// O segundo será o elemento no qual se quer inserir esse conteúdo.
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+    <App />,
+    document.getElementById('root')
+    //pode-se usar dessa forma também
+)
+// Ele irá renderizar na tela o que for colocado antes
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
